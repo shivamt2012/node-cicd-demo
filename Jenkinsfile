@@ -47,7 +47,7 @@ pipeline {
         stage('Deploy to Target EC2') {
             steps {
                 sh '''
-                ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519 ubuntu@$TARGET_HOST "
+                ssh -o StrictHostKeyChecking=no ubuntu@$TARGET_HOST "
                     aws ecr get-login-password --region $AWS_REGION | \
                     docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com &&
                     docker pull $ECR_URI:$IMAGE_TAG &&
