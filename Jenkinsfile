@@ -7,7 +7,7 @@ pipeline {
         REPO_NAME = "node-cicd-demo"
         ECR_URI = "${ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${REPO_NAME}"
         IMAGE_TAG = "${BUILD_NUMBER}"
-        TARGET_HOST = "172.16.5.149"
+        TARGET_HOST = "10.0.10.252"
     }
 
     stages {
